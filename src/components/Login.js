@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import axios from 'axios';  // Importa o Axios para fazer as requisições à API
+import axios from 'axios';
 
 const Login = () => {
-  // Definindo os estados para o e-mail, senha e mensagens de erro
-  const [email, setEmail] = useState('');
+  // Definindo os estados para o usuário, senha e mensagens de erro
+  const [usuario, setUsuario] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
@@ -13,19 +13,32 @@ const Login = () => {
 
     try {
       // Faz a requisição POST para a API com os dados de login
-      const response = await axios.post('http://localhost:8000/api/login', { email, password });
+      const response = await axios.post(
+        'http://localhost:8000/api/token/',
+        { username: usuario, 
+          password: password
+        }, // Enviando 'usuario' em vez de 'email'
+      
+      );
 
       // Verifica se o login foi bem-sucedido (assumindo que a resposta inclui um token)
-      if (response.data.token) {
+      if (response.data.access) {
         // Armazena o token no localStorage para uso futuro
-        localStorage.setItem('authToken', response.data.token);
+        localStorage.setItem('TokenAccess', response.data.access);
 
         // Redireciona o usuário para outra página após o login
         window.location.href = '/dashboard';  // Altere para a rota que faz sentido no seu app
+      } else {
+        // Mensagem de erro se não houver token na resposta
+        setError('Erro de autenticação: token não recebido.');
       }
     } catch (error) {
       // Define a mensagem de erro caso o login falhe
-      setError('Login falhou. Verifique suas credenciais.');
+      if (error.response && error.response.status === 401) {
+        setError('Login falhou: credenciais incorretas.');
+      } else {
+        setError('Erro ao conectar-se à API. Tente novamente.');
+      }
     }
   };
 
@@ -35,11 +48,11 @@ const Login = () => {
       {/* Formulário de login */}
       <form onSubmit={handleSubmit}>
         <div>
-          <label>Email:</label>
+          <label>Usuário:</label>
           <input 
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            type="text"  // Mudando o tipo para texto
+            value={usuario}  // Atualizando para o estado 'usuario'
+            onChange={(e) => setUsuario(e.target.value)}
             required
           />
         </div>
@@ -56,7 +69,7 @@ const Login = () => {
       </form>
 
       {/* Exibe uma mensagem de erro se o login falhar */}
-      {error && <p>{error}</p>}
+      {error && <p style={{ color: 'red' }}>{error}</p>}
     </div>
   );
 };
