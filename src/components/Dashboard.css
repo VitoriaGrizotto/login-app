@@ -1,0 +1,158 @@
+/* Estilo Geral */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #ff4d4d, #660000);
+  color: #fff;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 3rem;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+p {
+  line-height: 1.8;
+  margin: 15px 0;
+  color: #ffe6e6;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: linear-gradient(to right, #990000, #330000);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li {
+  margin: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 25px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.nav-links a:hover {
+  background-color: #ff6666;
+  transform: scale(1.1);
+}
+
+.login-icon {
+  text-align: right;
+  color: #ffe6e6;
+}
+
+/* Sensor Info */
+.sensor-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  margin: 30px auto;
+  width: 90%;
+  max-width: 1200px;
+}
+
+.sensor-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: linear-gradient(to right, #cc3333, #990000);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.sensor-section img {
+  max-width: 200px;
+  height: auto;
+  border-radius: 10px;
+  border: 2px solid #660000;
+  transition: transform 0.3s;
+}
+
+.sensor-section:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.6);
+}
+
+.sensor-section img:hover {
+  transform: scale(1.1);
+}
+
+.sensor-section.left {
+  flex-direction: row;
+}
+
+.sensor-section.right {
+  flex-direction: row-reverse;
+}
+
+.sensor-section p {
+  flex: 1;
+  text-align: justify;
+  margin: 0;
+}
+
+/* Botões */
+button {
+  background: linear-gradient(to right, #ff6666, #ff3333);
+  border: none;
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 12px 25px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(255, 0, 0, 0.5);
+}
+
+button:active {
+  transform: translateY(1px);
+  box-shadow: none;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .sensor-section {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .sensor-section img {
+      max-width: 100%;
+  }
+
+  .navbar {
+      flex-direction: column;
+      gap: 10px;
+  }
+}

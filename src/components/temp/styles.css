@@ -1,0 +1,44 @@
+.table-container {
+    max-width: 70%; /* Limita a largura a 50% da página */
+    margin: 15px auto; /* Centraliza a tabela */
+    overflow-y: auto; /* Adiciona rolagem vertical */
+    overflow-x: hidden; /* Evita rolagem horizontal */
+    max-height: 200px; /* Define a altura máxima */
+    border: 1px solid #ccc; /* Borda ao redor da área de rolagem */
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    font-size: 0.5em;
+  }
+  
+  th, td {
+    padding: 8px 12px;
+    text-align: left;
+    border: 1px solid #ccc;
+  }
+  
+  th {
+    background-color: #007B55;
+    color: white;
+    font-weight: 600;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  tr:hover {
+    background-color: #e0e0e0;
+    transition: background-color 0.3s;
+  }
+  
+  .error {
+    color: #d9534f;
+    font-weight: bold;
+    font-size: 1em;
+    margin-bottom: 10px;
+  }
+  
