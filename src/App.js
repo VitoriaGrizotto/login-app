@@ -1,18 +1,37 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Login from './components/Login';
-import Register from './components/Register';
-import Dashboard from './components/Dashboard';
-import Luminosidade from './components/Luminosidade';
-import Umidade from './components/Umidade';
-import Contador from './components/Contador';
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import Login from './components/login/Login';
+import Register from './components/login/Register';
+import Dashboard from './components/home/Dashboard';
 import ProtectedRoute from './components/ProtectedRoute';
-import Temp from "./components/temp"
+import Temp from './components/temp';
 
+import Luminosidade from './components/lumi/luminosidade';
+import Umidade from './components/umi/umidade';
+import Contador from './components/cont/contador';
+
+
+const BodyClassHandler = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    const body = document.body;
+
+    // Define classes diferentes para rotas específicas
+    if (location.pathname === '/login' || location.pathname === '/register') {
+      body.classList.add('login-page');
+    } else {
+      body.classList.remove('login-page');
+    }
+  }, [location]);
+
+  return null; // Não renderiza nada, só ajusta o body
+};
 
 const App = () => {
   return (
     <Router>
+      <BodyClassHandler /> {/* Componente que gerencia as classes do body */}
       <Routes>
         <Route path="/" element={<Login />} /> {/* Rota principal para login */}
         <Route path="/login" element={<Login />} /> {/* Rota alternativa para login */}
@@ -35,4 +54,3 @@ const App = () => {
 };
 
 export default App;
-

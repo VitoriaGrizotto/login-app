@@ -1,13 +1,13 @@
-body {
+body{
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
-  background-color: #ffffff; /* Fundo branco */
+  background-color: #ffffff; /* Fundo branco sólido */
   display: flex;
   justify-content: center;
   align-items: center;
-  /* height: 100vh;
-  overflow: hidden; */
+  /* height: 100vh;  */
+  /* overflow: hidden; */
 }
 
 /* Container principal das páginas de login e cadastro */
@@ -15,13 +15,13 @@ body {
   width: 320px;
   margin: 50px auto;
   padding: 30px;
-  background: linear-gradient(145deg, #ffffff, #f0f0f0);
+  background: #f5f5f5; /* Fundo cinza claro */
   border-radius: 15px;
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 15px rgba(255, 255, 255, 0.2);
   text-align: center;
 }
 
-.form-container h2{
+.form-container h2 {
   color: #333;
 }
 
@@ -50,9 +50,9 @@ body {
 }
 
 .form input:focus {
-  border: 1px solid #c0392b;
+  border: 1px solid #555;
   outline: none;
-  box-shadow: 0px 0px 8px rgba(192, 57, 43, 0.3);
+  box-shadow: 0px 0px 8px rgba(85, 85, 85, 0.3);
 }
 
 /* Estilo do botão */
@@ -62,7 +62,7 @@ button {
   font-size: 1em;
   font-weight: bold;
   color: #fff;
-  background: linear-gradient(135deg, #ff6b6b, #c0392b); /* Gradiente vermelho */
+  background: #1554dd; /* Cor sólida verde */
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -71,7 +71,7 @@ button {
 }
 
 button:hover {
-  background: linear-gradient(135deg, #e74c3c, #b92d25); /* Gradiente vermelho mais escuro */
+  background: #7e8697; /* Tom verde mais escuro */
   transform: scale(1.02);
 }
 
@@ -82,17 +82,10 @@ button:hover {
   margin-top: 15px;
 }
 
-/* Estilo da mensagem de sucesso */
-.success-message {
-  color: #27ae60;
-  font-size: 0.9em;
-  margin-top: 15px;
-}
-
 /* Link para alternar entre Login e Cadastro */
 .toggle-link {
   display: block;
-  color: #c0392b;
+  color: #4CAF50; /* Cor verde */
   cursor: pointer;
   font-size: 0.9em;
   font-weight: bold;
@@ -102,5 +95,5 @@ button:hover {
 }
 
 .toggle-link:hover {
-  color: #e74c3c;
+  color: #45a049; /* Verde mais escuro */
 }

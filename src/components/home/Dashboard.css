@@ -3,9 +3,10 @@ body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
-  background: linear-gradient(to bottom, #ff4d4d, #660000);
-  color: #fff;
+  background-color: #f0f0f0; /* Cor de fundo suave */
+  color: #333; /* Cor do texto mais escura para contraste */
 }
+
 
 h1 {
   text-align: center;

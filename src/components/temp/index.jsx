@@ -8,11 +8,14 @@ const TemperatureDisplay = () => {
   const [error, setError] = useState("");
 
   useEffect(() => {
+    const token =localStorage.getItem("TokenAccess")
+    console.log("Token Temperatura: ", token)
+    
     const fetchTemperatures = async () => {
       try {
-        const response = await axios.get("http://127.0.0.1:8000/api/temperatura/");
+        const response = await axios.get("http://127.0.0.1:8000/api/temperatura");
         setTemperatures(response.data);
-        console.log(response.data);
+        console.log(response.data[10].valor);
       } catch (err) {
         setError("Erro ao carregar os dados de temperatura.");
       }
@@ -29,9 +32,9 @@ const TemperatureDisplay = () => {
         <table className="table">
           <thead>
             <tr>
+            <th>SensorID</th>
               <th>Temperatura (°C)</th>
               <th>Data de Registro</th>
-              <th>SensorID</th>
               <th>Tipo</th>
               <th>Unid</th>
               <th>Latitude</th>
@@ -44,10 +47,11 @@ const TemperatureDisplay = () => {
           <tbody>
             {temperatures.map((data) => (
               <tr key={data.id}>
+                <td>{data.id}</td>
                 <td>{data.valor.toFixed(2)}</td>
                 <td>{new Date(data.timestamp).toLocaleString()}</td>
                 <td>{data.sensor.id}</td>
-                <td>{data.sensor.tipo}</td>
+                <td>null</td>
                 <td>{data.sensor.unidade_medida}</td>
                 <td>{data.sensor.latitude}</td>
                 <td>{data.sensor.longitude}</td>
@@ -62,5 +66,6 @@ const TemperatureDisplay = () => {
     </div>
   );
 };
+
 
 export default TemperatureDisplay;

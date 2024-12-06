@@ -3,11 +3,11 @@ import { Link, Navigate } from 'react-router-dom';
 import './Dashboard.css'; // Estilos atualizados
 
 // Importando as imagens
-import arduino from "./images/arduino.png";
-import temperaturaImg from "./images/temperatura.jpg";
-import umidadeImg from "./images/umidade.png";
-import contadorImg from "./images/contador.jpg";
-import luminosidadeImg from "./images/luminosidade.jpg";
+import arduino from "../images/arduino.png";
+import temperaturaImg from "../images/temperatura.jpg";
+import umidadeImg from "../images/umidade.png";
+import contadorImg from "../images/contador.jpg";
+import luminosidadeImg from "../images/luminosidade.jpg";
 
 const Dashboard = () => {
   const [token, setToken] = useState(localStorage.getItem("accessToken"));
@@ -17,6 +17,8 @@ const Dashboard = () => {
     useEffect(() => {
         // Recupera o nome do usuário logado do localStorage
         const username = localStorage.getItem("username");
+        const token =localStorage.getItem("TokenAccess")
+        console.log("Bastião: ", token)
         if (username) {
             setLoggedInUser(username);
         }
