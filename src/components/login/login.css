@@ -1,0 +1,99 @@
+body{
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #ffffff; /* Fundo branco sólido */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* height: 100vh;  */
+  /* overflow: hidden; */
+}
+
+/* Container principal das páginas de login e cadastro */
+.form-container {
+  width: 320px;
+  margin: 50px auto;
+  padding: 30px;
+  background: #f5f5f5; /* Fundo cinza claro */
+  border-radius: 15px;
+  box-shadow: 0 8px 15px rgba(255, 255, 255, 0.2);
+  text-align: center;
+}
+
+.form-container h2 {
+  color: #333;
+}
+
+/* Estilo dos campos do formulário */
+.form div {
+  margin-bottom: 20px;
+}
+
+.form label {
+  display: block;
+  font-weight: bold;
+  font-size: 1em;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.form input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background-color: #fafafa;
+  box-shadow: inset 0px 4px 8px rgba(0, 0, 0, 0.05);
+  font-size: 1em;
+  transition: border 0.3s ease;
+}
+
+.form input:focus {
+  border: 1px solid #555;
+  outline: none;
+  box-shadow: 0px 0px 8px rgba(85, 85, 85, 0.3);
+}
+
+/* Estilo do botão */
+button {
+  width: 100%;
+  padding: 12px;
+  font-size: 1em;
+  font-weight: bold;
+  color: #fff;
+  background: #1554dd; /* Cor sólida verde */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease, transform 0.1s ease;
+}
+
+button:hover {
+  background: #7e8697; /* Tom verde mais escuro */
+  transform: scale(1.02);
+}
+
+/* Estilo da mensagem de erro */
+.error-message {
+  color: #e74c3c;
+  font-size: 0.9em;
+  margin-top: 15px;
+}
+
+/* Link para alternar entre Login e Cadastro */
+.toggle-link {
+  display: block;
+  color: #4CAF50; /* Cor verde */
+  cursor: pointer;
+  font-size: 0.9em;
+  font-weight: bold;
+  text-decoration: underline;
+  margin-top: 20px;
+  transition: color 0.3s ease;
+}
+
+.toggle-link:hover {
+  color: #45a049; /* Verde mais escuro */
+}
